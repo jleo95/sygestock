@@ -1,0 +1,8 @@
+#.htaccess du dossier public
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(img|photos|.css|js|robots\.txt)
+RewriteRule ^(.*)$ index.php?url=$1 [L,PT]
